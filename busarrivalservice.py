@@ -13,9 +13,9 @@ class Busarrivalservice:
     # 정류소 조회 서비스 api
     def busstation(self):
         self.busstation_url = 'http://openapi.gbis.go.kr/ws/rest/busstationservice'
+        serviceKey = '공공데이터사이트에서 발급받은 키를 입력하세요.'
         # 사용자가 원하는 정류장 번호 입력받기
-        busstation_queryParams = '?' + 'serviceKey=' + 'B%2BDl7oIiROOrq%2BtI3vhlxzj4q684rQu0tU1Ctpj8SnPcfmtFkygehhb5JLKUVNZAIVr%2Bqiq3aFB4mgrVKFyfsA%3D%3D' \
-                                 + '&keyword=' + self.busstationnum
+        busstation_queryParams = '?' + 'serviceKey=' + serviceKey + '&keyword=' + self.busstationnum
         # busstation 결과값 파싱해오기
         url = self.busstation_url + busstation_queryParams
         result = requests.get(url)
